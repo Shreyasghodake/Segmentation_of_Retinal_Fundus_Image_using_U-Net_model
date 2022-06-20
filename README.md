@@ -1,1 +1,0 @@
-# Segmentation_of_Retinal_Fundus_Image_using_U-Net_model
