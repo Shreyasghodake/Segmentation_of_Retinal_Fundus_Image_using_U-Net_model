@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Retinal Blood Vessels Image Segmentaion</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+
+  <h1 class="jumbotron bg-primary">Image Segmentaion</h1>
+  <br><br>
+  <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="image" id="pwd">
+      </div>
+      <label class="control-label col-sm-2" for="pd">Upload Your Mask :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="mask" id="pd">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+      
+    </div>
+  </form>
+
+	{% if acc_value %}
+  <center>
+  <img src="{{img_path}}">
+  <h2> Retinal Fundus Image &emsp; &emsp;Predicted Image  &emsp; &emsp; Ground Truth Image</h2>  
+  </center>
+	<h2> acc_value   : <i> {{acc_value}} </i>  recall_value   : <i> {{recall_value}} </i>  precision_value   : <i> {{precision_value}} </i></h2>
+	{% endif %}
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
